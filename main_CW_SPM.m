@@ -22,14 +22,14 @@ OPM1 = Canvas.GetComponentByName('Optical Power Meter_1');
 OPM2 = Canvas.GetComponentByName('Optical Power Meter_2');
 
 timeForFile=datestr(now,'mm-dd-yyyy_HH_MM_SS');
-Powers = 10:20;
-P1 = zeros(length(Powers),1);
-P2 = zeros(length(Powers),1);
-d2 = 17;
+Powers = 10:20; % input powers in dBm
+P1 = zeros(length(Powers),1);% array for power of peak 1
+P2 = zeros(length(Powers),1);% array for power of peak 2
+d2 = 17;% dispersion in ps/nm/km
 % Aeff = 80*1.3145/7.6;
-Aeff = 80;
-L = 2;
-Att = 0.2;
+Aeff = 80;% effective mode area in mkm^2
+L = 2;% length of fiber in km
+Att = 0.2;% attenuation coef in dB/km
 Fiber.SetParameterValue('Attenuation',Att);
 Fiber.SetParameterValue('Length',L);
 Fiber.SetParameterValue('Dispersion',d2);
